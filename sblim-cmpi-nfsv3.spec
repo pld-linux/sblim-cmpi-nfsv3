@@ -2,7 +2,7 @@ Summary:	SBLIM CMPI NFSv3 instrumentation
 Summary(pl.UTF-8):	Przyrządy pomiarowe NFSv3 dla SBLIM CMPI
 Name:		sblim-cmpi-nfsv3
 Version:	1.1.1
-Release:	2
+Release:	3
 License:	Eclipse Public License v1.0
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/sblim/%{name}-%{version}.tar.bz2
@@ -51,14 +51,14 @@ rm -rf $RPM_BUILD_ROOT
 %post
 /sbin/ldconfig
 %{_datadir}/%{name}/provider-register.sh \
-	-r %{_datadir}/%{name}/Linux_Fsvol.registration \
-	-m %{_datadir}/%{name}/Linux_Fsvol.mof >/dev/null
+	-r %{_datadir}/%{name}/Linux_NFSv3System{Configuration,Setting}.registration \
+	-m %{_datadir}/%{name}/Linux_NFSv3System{Configuration,Setting}.mof >/dev/null
 
 %preun
 if [ "$1" = "0" ]; then
 	%{_datadir}/%{name}/provider-register.sh -d \
-		-r %{_datadir}/%{name}/Linux_Fsvol.registration \
-		-m %{_datadir}/%{name}/Linux_Fsvol.mof >/dev/null
+		-r %{_datadir}/%{name}/Linux_NFSv3System{Configuration,Setting}.registration \
+		-m %{_datadir}/%{name}/Linux_NFSv3System{Configuration,Setting}.mof >/dev/null
 fi
 
 %postun	-p /sbin/ldconfig
