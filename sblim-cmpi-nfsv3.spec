@@ -2,7 +2,7 @@ Summary:	SBLIM CMPI NFSv3 instrumentation
 Summary(pl.UTF-8):	Przyrządy pomiarowe NFSv3 dla SBLIM CMPI
 Name:		sblim-cmpi-nfsv3
 Version:	1.1.1
-Release:	3
+Release:	4
 License:	Eclipse Public License v1.0
 Group:		Libraries
 Source0:	http://downloads.sourceforge.net/sblim/%{name}-%{version}.tar.bz2
@@ -10,7 +10,6 @@ Source0:	http://downloads.sourceforge.net/sblim/%{name}-%{version}.tar.bz2
 URL:		http://sblim.sourceforge.net/
 BuildRequires:	sblim-cmpi-base-devel
 BuildRequires:	sblim-cmpi-devel
-Requires:	%{name}-libs = %{version}-%{release}
 Requires:	sblim-cmpi-base
 Requires:	sblim-sfcb
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
